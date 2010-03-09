@@ -1,8 +1,11 @@
 ############################################################################
 # Makefile for arraystream library and sample
 #
-#   $Id: Makefile,v 1.2 2007/08/27 13:01:00 michael Exp $
+#   $Id: Makefile,v 1.3 2009/01/04 06:16:52 michael Exp $
 #   $Log: Makefile,v $
+#   Revision 1.3  2009/01/04 06:16:52  michael
+#   -O3 put back.  Segfault fixed in 4.3.2.
+#
 #   Revision 1.2  2007/08/27 13:01:00  michael
 #   Lower optimization level.
 #   -O2 in GCC 4.1.2 results in a seg fault.
@@ -15,8 +18,8 @@
 
 CC = gcc
 LD = gcc
-CFLAGS = -O -Wall -ansi -c
-LDFLAGS = -O -o
+CFLAGS = -g -O3 -Wall -ansi -c
+LDFLAGS = -g -O3 -o
 
 # Treat NT and non-NT windows the same
 ifeq ($(OS),Windows_NT)
