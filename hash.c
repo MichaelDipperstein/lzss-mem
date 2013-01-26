@@ -174,6 +174,7 @@ encoded_string_t FindMatch(int windowHead, int uncodedHead)
     encoded_string_t matchData;
     int i, j;
 
+    ((void)(windowHead));                       /* get rid of unused warning */
     matchData.length = 0;
     i = hashTable[HashKey(uncodedHead, TRUE)];  /* start of proper list */
     j = 0;
@@ -273,7 +274,7 @@ void RemoveString(int charIndex)
 
     hashKey = HashKey(charIndex, FALSE);
 
-    if (hashTable[hashKey] == charIndex)
+    if (hashTable[hashKey] == (unsigned int)charIndex)
     {
         /* we're deleting a list head */
         hashTable[hashKey] = nextIndex;
@@ -282,7 +283,7 @@ void RemoveString(int charIndex)
 
     /* find character pointing to ours */
     i = hashTable[hashKey];
-    while(next[i] != charIndex)
+    while(next[i] != (unsigned int)charIndex)
     {
         i = next[i];
     }

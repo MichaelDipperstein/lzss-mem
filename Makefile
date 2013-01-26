@@ -10,7 +10,7 @@
 ############################################################################
 CC = gcc
 LD = gcc
-CFLAGS = -I. -O3 -Wall -ansi -c
+CFLAGS = -I. -O3 -Wall -Wextra -ansi -pedantic -c
 LDFLAGS = -O3 -o
 
 # libraries
