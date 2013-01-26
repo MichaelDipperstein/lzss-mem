@@ -56,13 +56,12 @@
 *   Function   : main
 *   Description: This function demonstrates the usage of each of the bit
 *                bit file functions.
-*   Parameters : argc - the number command line arguements (not used)
-*                argv - array of command line arguements (not used)
+*   Parameters : None
 *   Effects    : Writes array stream , reads back results, printing them
 *                to stdout.
 *   Returned   : EXIT_SUCCESS
 ***************************************************************************/
-int main(int argc, char *argv[])
+int main()
 {
     unsigned char array[(5 * NUM_CALLS) + (NUM_CALLS / 8) + 1];
     array_stream_t *as;
