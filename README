@@ -2,9 +2,9 @@ DESCRIPTION
 -----------
 This archive contains an ANSI C library implementing bitwise reading and
 writing of arrays.  This library is intended to provide functionality analogous
-to my bit file library (http://michael.dipperstein.com/bitlibs).  Rather than
-building the library for optimal array usage, the library has been built for bit
-order compatibility with my bit file library.
+to my bit file library (https://michaeldipperstein.github.io/bitlibs.html).
+Rather than building the library for optimal array usage, the library has been
+built for bit order compatibility with my bit file library.
 
 FILES
 -----
@@ -38,4 +38,4 @@ TODO
 
 AUTHOR
 ------
-Michael Dipperstein (mdipper@cs.ucsb.edu)
+Michael Dipperstein (mdipper@alumni.cs.ucsb.edu)
