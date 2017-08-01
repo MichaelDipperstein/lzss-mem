@@ -76,7 +76,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lzlocal.h"
-#include "arraystream.h"
+#include "arraystream/arraystream.h"
 
 /***************************************************************************
 *                            TYPE DEFINITIONS

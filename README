@@ -78,6 +78,7 @@ HISTORY
             * Add the option to pass compression/decompression routines file
               pointers instead of file names.
 11/28/04  - Array based code forked from file based implementation.
+07/31/17  - Structure repo for use with GitHub
 
 TODO
 ----

@@ -1,12 +1,6 @@
 ############################################################################
 # Makefile for array based lzss encode/decode library and sample programs
 #
-#   $Id: Makefile,v 1.1.1.1 2004/12/06 14:26:18 michael Exp $
-#   $Log: Makefile,v $
-#   Revision 1.1.1.1  2004/12/06 14:26:18  michael
-#   initial release
-#
-#
 ############################################################################
 CC = gcc
 LD = gcc
@@ -26,7 +20,7 @@ ifeq ($(OS),Windows)
 	DEL = del
 else	#assume Linux/Unix
 	EXE =
-	DEL = rm
+	DEL = rm -f
 endif
 
 # define the method to be used for searching for matches (choose one)
@@ -41,14 +35,14 @@ LZOBJS = $(FMOBJ) lzencode.o lzdecode.o lzvars.o
 
 all:		comp$(EXE) decomp$(EXE) liblzss.a
 
-liblzss.a:	$(LZOBJS) arraystream.o
-		ar crv liblzss.a $(LZOBJS) arraystream.o
+liblzss.a:	$(LZOBJS) arraystream/arraystream.o
+		ar crv liblzss.a $(LZOBJS) arraystream/arraystream.o
 		ranlib liblzss.a
 
-lzencode.o:	lzencode.c lzlocal.h arraystream.h
+lzencode.o:	lzencode.c lzlocal.h arraystream/arraystream.h
 		$(CC) $(CFLAGS) $<
 
-lzdecode.o:	lzdecode.c lzlocal.h arraystream.h
+lzdecode.o:	lzdecode.c lzlocal.h arraystream/arraystream.h
 		$(CC) $(CFLAGS) $<
 
 brute.o:	brute.c lzlocal.h
@@ -63,16 +57,16 @@ hash.o:	        hash.c lzlocal.h
 lzvars.o:	lzvars.c lzlocal.h
 		$(CC) $(CFLAGS) $<
 
-arraystream.o:	arraystream.c arraystream.h
-		$(CC) $(CFLAGS) $<
+arraystream/arraystream.o:
+		cd arraystream && $(MAKE) arraystream.o
 
-comp$(EXE):	comp.o $(FMOBJ) lzencode.o lzvars.o arraystream.o
+comp$(EXE):	comp.o $(FMOBJ) lzencode.o lzvars.o arraystream/arraystream.o
 		$(LD) $^ $(LDFLAGS) $@
 
 comp.o:		comp.c lzss.h
 		$(CC) $(CFLAGS) $<
 
-decomp$(EXE):	decomp.o lzdecode.o lzvars.o arraystream.o 
+decomp$(EXE):	decomp.o lzdecode.o lzvars.o arraystream/arraystream.o 
 		$(LD) $^ $(LDFLAGS) $@
 
 decomp.o:	decomp.c lzss.h
@@ -83,3 +77,4 @@ clean:
 		$(DEL) *.a
 		$(DEL) comp$(EXE)
 		$(DEL) decomp$(EXE)
+		$(DEL) arraystream/*.o
