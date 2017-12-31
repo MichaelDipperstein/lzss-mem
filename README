@@ -13,7 +13,7 @@ be linked with different sliding window search routines which can speed up
 the compression time at the cost of additional memory space.
 
 More information on LZSS encoding may be found at:
-http://www.datacompression.info/LZSS.shtml
+https://michaeldipperstein.github.io/lzss.html
 
 FILES
 -----
