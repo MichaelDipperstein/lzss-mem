@@ -30,7 +30,7 @@
 ****************************************************************************
 *
 * Array Stream: Bit stream opperations on arrays
-* Copyright (C) 2004, 2007 by Michael Dipperstein (mdipper@cs.ucsb.edu)
+* Copyright (C) 2004, 2007 by Michael Dipperstein (mdipperstein@gmail.com)
 *
 * This file is part of the array stream library.
 *
