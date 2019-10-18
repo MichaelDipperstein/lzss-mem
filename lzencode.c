@@ -51,7 +51,7 @@
 ****************************************************************************
 *
 * LZEncode: An ANSI C LZSS Encoding Routines
-* Copyright (C) 2003-2004 by Michael Dipperstein (mdipper@cs.ucsb.edu)
+* Copyright (C) 2003-2004 by Michael Dipperstein (mdipperstein@gmail.com)
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
