@@ -1,0 +1,3 @@
+[submodule "arraystream"]
+	path = arraystream
+	url = https://github.com/MichaelDipperstein/arraystream.git
